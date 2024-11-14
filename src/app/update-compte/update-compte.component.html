@@ -1,0 +1,38 @@
+<div class="container">
+    <div>
+      <h2>Modifier un Compte :</h2>
+    </div>
+    <form>
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <label>Code Compte</label>
+        <input readonly type="text" [(ngModel)]="currentcompte.code" name="code" class="form-control">
+      </div>
+  
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Nom</label>
+        <input type="text" [(ngModel)]="currentcompte.nom" name="nom" class="form-control">
+      </div>
+  
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Prénom</label>
+        <input type="text" [(ngModel)]="currentcompte.prenom" name="prenom" class="form-control">
+      </div>
+  
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Date de Création</label>
+        <input type="date" [ngModel]="currentcompte.dateCreation | date: 'yyyy-MM-dd'" 
+               (ngModelChange)="currentcompte.dateCreation = $event" name="dateCreation" 
+               class="form-control">
+      </div>
+  
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <label>Solde</label>
+        <input type="number" [(ngModel)]="currentcompte.solde" name="solde" class="form-control">
+      </div>
+  
+      <div class="mt-2">
+        <button type="button" (click)="updatecompte()" class="btn btn-success">Modifier</button>
+      </div>
+    </form>
+  </div>
+  

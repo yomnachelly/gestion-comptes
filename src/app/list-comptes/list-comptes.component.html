@@ -1,0 +1,35 @@
+<div class="container my-5">
+    <div class="card shadow-lg mb-4 border-0">
+        <div class="card-body p-4">
+            <table class="table table-hover table-borderless rounded">
+                <thead class="table-primary text-center">
+                    <tr>
+                        <th>Code</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Date Création</th>
+                        <th>Solde</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let compte of comptes">
+                    <tr class="table-row text-center">
+                        <td>{{compte.code}}</td>
+                        <td>{{compte.nom}}</td>
+                        <td>{{compte.prenom}}</td>
+                        <td>{{compte.dateCreation | date:'dd/MM/yyyy'}}</td>
+                        <td>{{compte.solde | currency:'USD':'symbol':'1.2-2'}}</td>
+                        <td>
+                            <a class="btn btn-danger btn-sm mx-1 shadow-sm" (click)="supprimercompte(compte)">
+                                <i class="fas fa-trash-alt"></i> Supprimer
+                            </a>
+                            <a class="btn btn-success btn-sm mx-1 shadow-sm" [routerLink]="['/update-compte', compte.code]">
+                                <i class="fas fa-edit"></i> Modifier
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

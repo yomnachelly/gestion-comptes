@@ -1,0 +1,23 @@
+ /* Form Styling */
+ .form-control {
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+}
+.form-control:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Card Header */
+.card-body h3 {
+    color: #007bff;
+}
+
+/* Submit Button Styling */
+.btn-lg {
+    border-radius: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-lg:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
