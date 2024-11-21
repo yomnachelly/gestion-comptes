@@ -21,7 +21,8 @@ listeCompte(): Observable<compte[]> {
 comptes: compte[] = [
   { code:1,nom:"ALI",prenom:"ALI", dateCreation: new Date("14/11/2024"),solde:2000.0 },
   { code:2,nom:"Asma",prenom:"Asma", dateCreation: new Date("14/11/2024"),solde:1000.0 },
-  { code:3,nom:"Kais",prenom:"Kais", dateCreation: new Date("11/11/2024"),solde:1500.0 }
+  { code:3,nom:"Kais",prenom:"Kais", dateCreation: new Date("11/11/2024"),solde:1500.0 },
+ 
 ];
 
 listCompte(): compte[] {
@@ -44,14 +45,21 @@ ajouterCompte( prod: compte):Observable<compte>{
     }
     
 
-trierProduits() {
+triercomptes() {
   this.comptes.sort((n1, n2) => n1.code - n2.code);
 }
 
-updatecompte(prod :compte) : Observable<compte>
+/*updatecompte(prod :compte) : Observable<compte>
 {
 return this.http.put<compte>(this.apiURL, prod, httpOptions);
 
+}*/
+updatecompte(prod: compte): Observable<compte> {
+  const url = `${this.apiURL}/${prod.code}`; // Assurez-vous d'ajouter le code ici
+  return this.http.put<compte>(url, prod, httpOptions);
 }
+
+
+
  
 }
