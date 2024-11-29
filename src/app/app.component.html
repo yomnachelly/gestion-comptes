@@ -1,19 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-lg">
   <div class="container">
-    <a class="navbar-brand" href="#">Gestion des Comptes</a>
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <i class="fas fa-university me-2"></i> Gestion des Comptes
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-           <a class="nav-link" routerLink="/list-compte">Liste des Comptes</a>
+          <a class="nav-link text-white" [routerLinkActive]="['active']" routerLink="/list-compte">
+            <i class="fas fa-list me-1"></i> Liste des Comptes
+          </a>
         </li>
         <li class="nav-item">
-           <a class="nav-link" routerLink="/add-compte">Ajouter un Compte</a>
+          <a class="nav-link text-white" [routerLinkActive]="['active']" routerLink="/add-compte">
+            <i class="fas fa-plus-circle me-1"></i> Ajouter un Compte
+          </a>
         </li>
-     </ul>
-     
+      </ul>
     </div>
   </div>
 </nav>
